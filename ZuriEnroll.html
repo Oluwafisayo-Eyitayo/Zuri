@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="ZuriEnroll.css">
+    <title>Zuri Enrollment</title>
+</head>
+<body>
+    <nav class="navbar navbar-default fixed-top">
+        <div class="container">
+   <div><a href="#" ><img src="data:image/png;base64,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" id="zurilogo"></a></div>
+          <div id="about"><a href="#"> About</a></div>
+          <div id="whyus"><a href="#" >Why us?</a></div>
+          <div id="stark"><a href="#" > Starks Covered</a></div>
+          <div id="faq"><a href="#" >FAQs</a></div>
+          <div><span id="right"> Enroll Now</span>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSZsQtX5ESRIezlXaTRNbEGvqvE2_GDMkB1V8Yh2mLs53LXd_yRCARUutKPugx06ywwDg&usqp=CAU"></div>
+        </div>
+      </nav>
+
+      <div class="container1">
+        <div><img src="../../../lady1.jpg">
+        </div> 
+        <div>
+        <h3 id="search"> And now your search has ended...</h3>
+        <h1 id="firsth1"> Gain knowledge to help<br> you scale through the <br>tech industry for free.</h1>
+            <img src="../../../line.svg">
+            <p id="basic">A basic introduction to software development<br> and product design aimed at complete<br> beginners, which anyone can join</p>
+            <button href="#" class="btn"> Enroll Now</button>
+        </div>
+                <div>
+                    <img src="../../../section1wire.svg">
+                    <img src="../.././maleface.svg">
+                </div>
+                <img src="../../../male1.jpg">
+            </div>
+    </div>
+    <hr>
+      <div class="container2">
+        <div>
+            <h1 id="ingressive"> Ingressive for Good was <br>launched in July 2020 with <br>No dollar in donation...</h1>
+        </div>
+        <div class="ingressivepic">
+            <img src="data:image/png;base64,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" >
+        </div>
+        <div>
+            <p id="more"> to help increase the earning<br> power of African youths by <br>providing them with tech skills,<br> community, tools, resources, and <br>jobs... Read More
+                <hidden Why Zuri Training?
+                
+                Here at Zuri, you gain access to enough knowledge to introduce and aid your success in the tech industry.
+                </hidden></p>
+        </div>
+         </div>
+         <hr> 
+      <div class="container3">
+        <div>
+            <img src="../../../section3wire.svg">
+        </div>
+        <div>
+            <h2 id="search"> Why Zuri training?</h2>
+            <h1 id="gain">Here at Zuri, you gain access to <br>enough knowledge to introduce <br>and aid your success in the tech <br>industry.</h1>
+        </div>
+        <div>
+            <img src="../../../Star.jpg">
+        </div>
+      </div>
+      <div class="container4">
+        <div class="box1">
+            <img src="../../../curve1.png">
+            <h1 id="num">01</h1>
+            <h2 id="numb"> Fully <br> Remote</h2>
+            <h3 id="number">100% online classes available to anyone in the world.</h3>
+        </div>
+        <div class="box2">
+            <img src="../../../curve.svg">
+            <h1 id="num">02</h1>
+            <h2 id="numb">Hands-on <br> Experience</h2>
+            <h3 id="number">We don't just teach you theory, we show you how to build things.</h3>
+        </div>
+        <div class="box3">
+            <img src="../../../curve3.svg">
+            <h1 id="num">03</h1>
+            <h2 id="numb">Collaborative<br> Learning</h2>
+            <h3 id="number">We connect you with like minds to grow together.</h3>
+        </div>
+        <div class="box4">
+            <img src="../../../curve4.svg">
+            <h1 id="num">04</h1>
+            <h2 id="numb">Real-life<br> Projects</h2>
+            <h3 id="number">We give CV worthy projects to help you hit the ground running.</h3>
+        </div>
+        <div class="box5">
+            <img src="../../../curve5.svg">
+            <h1 id="num">05</h1>
+            <h2 id="numb">Beginner <br> Friendly</h2>
+            <h3 id="number">We provide step-by-step procedures on how to get things done.</h3>
+        </div>
+        <div class="box6">
+            <img src="../../../curve6.svg">
+            <h1 id="num">06</h1>
+            <h2 id="numb"> In-program <br> Mentorship</h2>
+            <h3 id="number">During and after the program you have access to experience seniors.</h3>
+        </div>
+      </div>
+      <div class="container5">
+        <div class="A">
+            <img src="../../../section5wire.svg">
+            <h3 id="a1">We will help you get started</h3>
+            <h1 id="a2"> High quality training with <br>hands-on practice </h1>
+            <p id="a3">We give you weekly tasks, ranging from easy to<br> complex, as you progress from stage to stage;<br> making it to the final stage means you are now<br> ready to continue learning and growing <br>independently.</p>
+            <button href="#" class="btn1" > enroll Now </button>
+        </div>
+        <div class="B">
+            <button href="#" class="btn2">
+                <img src="../../../hand.svg"> Team Work
+            </button>
+            <button href="#" class="btn2">
+                <img src="../../../mentor.svg"> Mentorship
+            </button>
+           <br><br> <button href="#" class="btn3">
+                <img src="../../../practice.svg"> Practice
+            </button>
+            <button href="#" class="btn4">
+                <img src="../../../games.svg"> Fun and Games
+            </button>
+        </div>
+        <div class="C">
+            <img src="../../../section5-image.png">
+        </div>
+      </div>
+      <div class="container6">
+        <div>
+            <h3 id="scope">Scope Of Program</h3>
+            <h1  id="list">Here is the list of areas that will<br> be explored in the training.</h1>
+        </div>
+        <div></div>
+      </div>
+      <div>
+        <img src="../../../section6.svg">
+      </div>
+      <div class="container7">
+        <div class="frontdev">
+            <h3> Frontend Development</h3>
+            <img src="../../../html.svg">
+            <img src="../../../css-3 logo.svg">
+            <img src="../../../javascript logo.svg">
+            <p> This track deals with the aspect of your application that the users interact with. A front-end developer will be able to correctly interpret a given design to the user interface.</p>
+        </div>
+        <div class="backdev">
+            <h3 > Backend Development</h3>
+            <img src="../../../php2 logo.svg">
+            <img src="../../../python-4 logo.svg">
+            <img src="../../../javascript logo.svg">
+            <p> This track deals with the aspect of the application the user does not directly interact with. It allows the frontend function either by running some back-end code or connecting to the database.</p>
+        </div>
+        <div class="productD">
+            <h3> Product Design</h3>
+            <img src="../../../adobe-xd logo.svg">
+            <img src="../../../Figma logo.svg">
+            <p> This track deals with creating a graphic plan for an application. You will learn to convert project documentation into viewable and understandable graphic design for the developers to work with.</p>
+        </div>
+        <div class="dev">
+            <h3 > DevOPS </h3>
+            <img src="../../../Ubuntu logo.svg">
+            <img src="../../../Bash logo.svg">
+            <img src="../../../aws logo.svg">
+            <p>The DevOps track is an extension of the backend track. It involves tools that’ll allow the participant to deploy solutions for public use.</p>
+        </div>
+        <div class="fulldev">
+            <h3> Fullstack Development</h3>
+            <img src="../../../html.svg">
+            <img src="../../../css-3 logo.svg">
+            <img src="../../../javascript logo.svg">
+            <img src="../../../python-4 logo.svg">
+            <p>A combination of frontend, backend, and DevOps. This track will only be available to participants who have the time to dedicate to the training.</p>
+        </div>
+        <div class="frameW">
+            <h3>Frameworks</h3>
+            <img src="../../../Laravel logo.svg">
+            <img src="../../../React logo.svg">
+            <img src="../../../Django logo.svg">
+            <p>During the program we will be exploring several useful frameworks to give you an edge in the industry and help you develop complex applications much faster.</p>
+        </div>
+      </div>
+      <button href="#" class="btn5"> Enroll Now </button>
+      <br> <hr>
+      <div class="container8">
+        <img src="../../../section7wire.svg">
+        <div>
+            <h3 id="query"> Got Questions? </h3>
+            <h1 id="common_query"> Frequently Asked Questions</h1>
+        </div>
+        <div class="questions">
+            <section>
+                <table border="1" class="table">
+                    <tr>
+                <td id="tb"> would I have to pay to enrol for trainig? 
+                    <hidden>No, the program is completely free thanks to Ingressive For Good.</hidden>
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </td></tr>
+                <tr> 
+                    <td id="tb">what are the things I need to participate? 
+                    <p> You'll need a laptop, internet connection and the willingness to learn through collaboration and mentorship.</p>
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+               </td> </tr>
+            <tr> 
+                <td id="tb">what happens if i join and I am not active?
+                <p>Participants who join the program and stop engaging will be given the chance to catch up. You'll also be assigned a 'study-mate' and mentor to help you. However, there is the possibility of not being promoted to the next stage if you remain inactive for too long</p> 
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+               </td> </tr>
+            <tr> 
+                <td id="tb">can I switch from part-track to full-time and vice versa?
+                <p>Unfortunately, no, you cannot switch from part-time to full-time and vice-versa</p>
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                </td></tr>
+            <tr>
+                <td id="tb">will I get paid?
+                <p>We reward some participants who complete tasks early, however, this is not a weekly reward. All the work that will be done during the program are hypothetical.</p>
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                </td>
+            </tr></table>
+            </section>
+        </div>
+      <div id="more_query"> 
+        <p > Still got questions?<button class="btn6">Tweet them at us</button></p>
+    </div>
+    <div class="structure">
+        <h4 id="struct">Structure</h4>  
+        <hr>
+        <h2 id="struct1">Program Structure</h2>
+        <p id="struct2">There are 2 broad paths in this program based on your availability.</p>
+    </div>
+      <div>
+        <img src="../../../section7wire.svg">
+    </div>
+    <div>
+        <img src="../../../Star1.svg">
+    </div>
+    
+    <div class="container9">
+        <div class="fullTime">
+            <h1>Full-time</h1>
+            <p>Requires at least 25 hours weekly on program content.</p>
+            <h4>Available Tracks:</h4>
+            <ul>
+                <li>Full Stack: Backend (Python, JavaScript), Frontend <br> (HTML, CSS, JavaScript) & DevOps</li>
+                <li>Design: Figma, Adobe XD</li>
+            </ul>
+            <h4>Phases:</h4>
+                <ul>
+                    <li>Training Phase</li>
+                    <li>Project Phase</li>
+                </ul>
+                <h4>Post Program:</h4>
+                    <ul>
+                        <li>Certification of Attendance</li>
+                        <li><a href=""> Zuri Internship</a></li>
+                        <li>Laptop Reward (upgrade or new one)</li>
+                        <li>Job Placement</li>
+                        <li>Zuri Talent Pool</li>
+                        <li>More Training: </li>
+                        <h5>
+                            Interview Prep
+                            <br>Algorithms & Data Structure
+                            <br>Freelance Setup & Training
+                            <br>LinkedIn Optimization
+                            <br>CV Review
+                        </h5>
+                    </ul>               
+                </div>
+                <div class="partTime">
+                    <h1>Part-time</h1>
+                    <p>Requires at least 11 hours weekly on program content.</p>
+                    <div><h4>Available Tracks:</h4>
+                    <ul>
+                        <li>Frontend:<br> HTML, CSS, JavaScript</li>
+                        <li>Backend: Can only select one backend language<br> Python, <br>PHP,<br>JavaScript</li>
+                        <li>Design:<br>Figma</li>
+                    </ul>
+                    <h4>Phases:</h4>
+                        <ul>
+                            <li>Training Phase</li>
+                        </ul>
+                        <h4>Post Program:</h4>
+                            <ul>
+                                <li>Certification of Attendance</li>
+                                <li> Zuri Internship</li>
+                            </ul>               
+                        </div>
+                </div>
+        <img src="../../../circle.png">
+    </div>
+    <div>
+        <img src="../../../circle.png">
+    </div>
+    <div class="container9">
+        <div>
+            <img src="../../../round.svg">
+        </div>
+        <div>
+            <img src="../../../bend1.svg">
+        </div>
+        <div class="getstarted">
+            <div id="start">
+            <h5 id="start1"> Get Started </h5>
+            <h1 id="start2">Break into the tech <br>industry like a Pro</h1>
+        </div>
+        <div>
+            <button href="#" class="btn7"> Enroll Now </button>
+        </div>
+        <img src="../../../curve2.svg">
+        <img src="../../../mains.png">
+    </div>
+    <div>
+        <div>
+            <img src="./logo.svg">
+        </div>
+        </div>
+        <div>
+            <a href=" https://www.facebook.com/thezuriteam/"><img src="./facebook.svg"></a>
+            <a href=" https://www.linkedin.com/company/zuri-team"><img src="./linkd.svg"></a>
+            <a href=" https://twitter.com/thezuriteam"><img src="./twitter.svg"></a>
+            <a href=" https://www.youtube.com/thezuriteam"><img src="./youtube.svg"></a>
+        </div>
+    </div>
+    <footer>
+        <div class="footer">
+        <div class="zurifooter">
+        <a href="#" id="zuri"><img src="data:image/png;base64,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" ></a>
+        </div>
+        <div class="zuricopyright">
+        <p>© 2022 Zuri Training</p>
+        </div>
+        <div class="policy">
+        <a href="#">Privacy policy </a>
+        <a href="#"> Ingressive For Good</a>
+        </div>
+        </div>
+    </footer>
+</body>
+</html>
